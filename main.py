@@ -1,66 +1,38 @@
 import random
 from coin_flip import play_coin_flip
+from higher_card import play_higher_card
 
 total = 100
 
-# def coin_flip(guess, bet):
+# def higher_card(bet):
 #     #Makes sure your bet was above 0
 #     if bet <= 0:
 #         print("------------------")
 #         print("Your bet should be above 0.")
-#         return 0
 #         print("------------------")
+#         return 0
 
-#     #Starts the game and flips the coin
+#     # Draws two cards between 1 and 10 and prints the result
 #     print("------------------")
-#     print("Let's flip a coin! You guessed " + guess)
-#     result = random.randint(1,2)
+#     print("Let's play a game of cards!")
+#     mine = random.randint(1, 10)
+#     theirs = random.randint(1, 10)
+#     print("Your card was " + str(mine))
+#     print("Their card was " + str(theirs))
 
-#     # Prints the result of the coin flip. A 1 is heads, a 2 is tails
-#     if result == 1:
-#         print("Heads!")
-#     elif result == 2:
-#         print("Tails")
-
-#     # Determines if you won or lost and returns either bet or -bet
-#     if (guess == "Heads" and result == 1) or (guess == "Tails" and result == 2):
+#     #Determines who won and returns either bet, -bet or 0 (in the case of a tie.)
+#     if mine > theirs:
 #         print("You won " + str(bet)+" dollars!")
 #         print("------------------")
 #         return bet
-#     else:
+#     elif mine < theirs:
 #         print("You lost " + str(bet)+" dollars!")
 #         print("------------------")
 #         return -bet
-
-def higher_card(bet):
-    #Makes sure your bet was above 0
-    if bet <= 0:
-        print("------------------")
-        print("Your bet should be above 0.")
-        print("------------------")
-        return 0
-
-    # Draws two cards between 1 and 10 and prints the result
-    print("------------------")
-    print("Let's play a game of cards!")
-    mine = random.randint(1, 10)
-    theirs = random.randint(1, 10)
-    print("Your card was " + str(mine))
-    print("Their card was " + str(theirs))
-
-    #Determines who won and returns either bet, -bet or 0 (in the case of a tie.)
-    if mine > theirs:
-        print("You won " + str(bet)+" dollars!")
-        print("------------------")
-        return bet
-    elif mine < theirs:
-        print("You lost " + str(bet)+" dollars!")
-        print("------------------")
-        return -bet
-    else:
-        print("It was a tie!")
-        print("------------------")
-        return 0
+#     else:
+#         print("It was a tie!")
+#         print("------------------")
+#         return 0
 
 def cho_han(guess, bet):
     #Makes sure your bet was above 0
@@ -135,7 +107,7 @@ def roulette(guess, bet):
         return -bet
 
 total += play_coin_flip("Heads", 10)
-total += higher_card(5)
+total += play_higher_card(5)
 total += cho_han("Even", 2)
 total += roulette("Even", 10)
 total += roulette(3, 1)

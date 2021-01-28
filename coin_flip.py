@@ -1,18 +1,9 @@
 import random
-
-def divider():
-    print("------------------")
-
-def print_text(text):
-    print(text)
-    divider()
+from setup import *
 
 def play_coin_flip(guess, bet):
-    #Makes sure your bet was above 0
     if bet <= 0:
-        divider()
-        print_text("Your bet should be above 0.")
-        return 0
+        bet_zero()
 
     #Starts the game and flips the coin
     print("------------------")
