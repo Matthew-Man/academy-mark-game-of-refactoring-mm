@@ -3,10 +3,10 @@ from setup import *
 
 def play_coin_flip(guess, bet):
     if bet <= 0:
-        bet_zero()
+        return bet_zero()
 
     #Starts the game and flips the coin
-    print("------------------")
+    divider()
     print("Let's flip a coin! You guessed " + guess)
     result = random.randint(1,2)
 
@@ -18,8 +18,6 @@ def play_coin_flip(guess, bet):
 
     # Determines if you won or lost and returns either bet or -bet
     if (guess == "Heads" and result == 1) or (guess == "Tails" and result == 2):
-        print_text("You won " + str(bet)+" dollars!")
-        return bet
+        return bet_outcome_win(bet)
     else:
-        print_text("You lost " + str(bet)+" dollars!")
-        return -bet
+        return bet_outcome_lost(bet)
